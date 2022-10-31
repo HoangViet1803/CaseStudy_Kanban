@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kanban</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Kanban: <span id="time"></span></h1>
+<!-- Modal -->
+<div class="modal" id="task_form">
+    <div class="header-modal">
+        <div class="title">Add Task</div>
+        <button class="btn close-modal">&times;</button>
+    </div>
+    <div class="body-modal">
+        <input type="text" name="task" id="task_input" placeholder="New Task">
+<!--        <input type="submit" value="Add new Task" id="task_submit" disabled>-->
+        <button type="submit" id="task_submit" >Add new Task</button>
+    </div>
+</div>
+<!-- Kanban -->
+<div class="kanban-container">
+    <div class="status" id="backlog">
+        <h1>Backlog</h1>
+        <button id="add_btnNew" data-target-modal="#task_form">+ New</button>
+    </div>
+    <div class="status" id="todo">
+        <h1>Todo</h1>
+    </div>
+    <div class="status" id="inProcess">
+        <h1>In-Process</h1>
+    </div>
+    <div class="status" id="completed">
+        <h1>Completed</h1>
+    </div>
+</div>
+<div id="overlay"></div>
+
+<!--JS-->
+<script src="main.js"></script>
+</body>
+</html>

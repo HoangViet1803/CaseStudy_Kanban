@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    width: 1000px;
+    min-height: 100vh;
+    margin: auto;
+}
+
+.kanban-container {
+    width: 1000px;
+    height: 90vh;
+    display: flex;
+}
+
+.status {
+    width: 25%;
+    background-color: antiquewhite;
+    position: relative;
+    padding: 60px 1rem 0.5rem;
+}
+
+.status:nth-child(even) {
+    background-color: #ffe3d3;
+}
+.status h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: grey;
+    width: 100%;
+    color: black;
+    margin: 0;
+    padding: 0.2rem 1rem;
+}
+#add_btnNew {
+    padding: 0.2rem 0.8rem;
+    background-color: #cccccc;
+    outline: none;
+    border: none;
+    width: 100%;
+    font-size: 1.3rem;
+    margin: 0.2rem 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#add_btnNew:hover {
+    background-color: #aaa;
+}
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-color: #fff;
+    box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px,
+    rgba(15, 15, 15, 0.1) 0px 2px 4px;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    margin: 0.2rem 0;
+    padding: 0rem 0.8rem;
+}
+.task .nameTask {
+    font-size: 1.2rem;
+}
+.task .close {
+    position: relative;
+    right: 0.1rem;
+    top: 0rem;
+    font-size: 2rem;
+    color: #ccc;
+    cursor: pointer;
+}
+.task .close:hover {
+    color: darkred;
+}
+/*modal*/
+.modal {
+    width: 500px;
+    position: fixed;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: top 0.3s ease-in-out;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    z-index: 2;
+    background-color: #fff;
+}
+.modal.active {
+    top: 30%;
+}
+.modal .header-modal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    background-color: rgba(0, 0, 0, 0.04);
+}
+.modal .body-modal {
+    padding: 1rem;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.close-modal:hover {
+    color: darkred;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+#overlay.active {
+    display: block;
+}
+
+#task_input,
+#task_submit {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    margin: 0.25rem;
+}
+#task_input {
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 1rem;
+}
+#task_submit {
+    background-color: #4caf50;
+    color: #ffe3d3;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+}
